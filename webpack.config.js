@@ -16,7 +16,6 @@ module.exports = ({develop}) => ({
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    assetModuleFilename: 'img/[hash][exit][query]',
     clean: true,
   },
   plugins: [
@@ -24,14 +23,14 @@ module.exports = ({develop}) => ({
       template: './src/index.html'
     }),
     new miniCssExtractPlugin({
-      filename: './css/main.css'
+      filename: './styles/main.css'
     })
   ],
   module: {
     rules: [
       {
         test: /\.(?:ico|png|jpg|jpeg|svg)$/i,
-        type: 'asset/resource'
+        type: 'asset/inline'
       },
       {
         test: /\.html$/i,
