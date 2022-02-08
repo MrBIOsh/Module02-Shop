@@ -198,6 +198,7 @@ body {
         position: absolute;
         top: 40px;
         right: 18px;
+        filter: blur(2px);
     }
     &__cucumber {
         width: 9rem;
