@@ -76,7 +76,7 @@ body {
 .logo {
     display: block;
     background-image: url(../img/logo/logo.svg);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     width: 12.2rem;
     height: 3.2rem;
@@ -93,8 +93,10 @@ body {
     background-image: url(../img/Files/background\ 1\ screen.png);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     padding-bottom: 187px;
+    z-index: 0;
     &__item {
         max-width: 378px;
         margin-left: 12rem;
@@ -192,30 +194,35 @@ body {
         position: absolute;
         bottom: 128px;
         right: 104px;
+        z-index: -1;
     }
     &__avocado {
         width: 14.5rem;
         position: absolute;
         top: 55px;
         right: 25px;
+        z-index: -1;
     }
     &__cucumber {
         width: 9rem;
         position: absolute;
         top: -2px;
         left: 686px;
+        z-index: -1;
     }
     &__pepper {
         width: 9rem;
         position: absolute;
         bottom: 621px;
         left: 28px;
+        z-index: -1;
     }
     &__beans {
         width: 11.8rem;
         position: absolute;
         bottom: 170px;
         left: -6px;
+        z-index: -1;
     }
 }
 
@@ -224,6 +231,7 @@ body {
     font-weight: 700;
     font-size: 8rem;
     margin: 0;
+    line-height: 1;
     &__span {
         font-style: italic;
     }
@@ -236,18 +244,86 @@ body {
 
 .description {
     margin: 0;
+    line-height: 1.5;
     &_size-s {
         font-size: 1.8rem;
+    }
+    &_size-m {
+        font-size: 2.4rem;
     }
 }
 
 .link {
     color: #fff;
     text-transform: uppercase;
-    padding: 2.5rem 4.2rem;
+    padding: 2.4rem 4.3rem;
+    letter-spacing: 0.13rem;
     background-color: $orange;
     box-shadow: 0px 1rem 1.1rem .2rem rgba(207, 92, 13, 0.2);
     text-decoration: none;
     border-radius: 3.8rem;
     display: inline-block;
+}
+
+.offer {
+    background-image: url(../img/Files/background\ 2\ sreen.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 2rem;
+    padding-bottom: 200px;
+    &__text {
+        margin-top: 6rem;
+        max-width: 700px;
+    }
+    &__slider {
+        overflow: hidden;
+        padding-top: 100px;
+    }
+}
+
+.swiper {
+    overflow: initial;
+    &-slide {
+        border: 1px solid $green;
+        border-radius: 1rem;
+        padding: 4rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 52rem;
+        &__title {
+            font-size: 3rem;
+            font-family: $font-cormorant;
+            font-weight: 700
+        }
+        &__text {
+            margin: 0;
+            margin-bottom: 3.7rem;
+            max-width: 280px;
+            line-height: 1.5;
+        }
+        &__link {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $green;
+            opacity: .8;
+            font-weight: 500;
+            letter-spacing: .1rem;
+        }
+    }
+    &-pagination {
+        display: none;
+    }
+    &-button-next, &-button-prev {
+        top: -60px;
+        &::after {
+            color: $green;
+        }
+    }
+    &-button-prev {
+        left: initial;
+        right: 100px;
+    }
 }
