@@ -307,10 +307,25 @@ body {
         &__link {
             text-decoration: none;
             text-transform: uppercase;
-            color: $green;
-            opacity: .8;
+            color: #27300f;
+            opacity: 0.8;
             font-weight: 500;
-            letter-spacing: .1rem;
+            letter-spacing: 0.1rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2.1rem;
+            &::before {
+                content: "";
+                display: block;
+                width: 3rem;
+                height: 3rem;
+                background-image: url(../img/Icons/plus.svg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                opacity: 0.8;
+            }
         }
     }
     &-pagination {
