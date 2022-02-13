@@ -394,7 +394,7 @@ body {
 .about {
     padding-bottom: 200px;
     &__text {
-        flex-basis: 590px;
+        flex-basis: 617px;
         margin-left: 12rem;
     }
     &__box {
@@ -421,26 +421,35 @@ body {
         font-weight: 700;
         font-family: $font-cormorant;
         font-style: italic;
+        &::before {
+            content: '';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba($green, .4);
+            border-radius: 100%;
+            width: 8.5rem;
+            height: 8.5rem;            
+            background-position: center center;            
+            background-repeat: no-repeat;
+        }
+        &:nth-child(1) {
+            &::before {
+                background-image: url(../img/Icons/fruits.svg);
+                background-size: 43px 41px;
+            }
+        }
+        &:nth-child(2) {
+            &::before {
+                background-image: url(../img/Icons/traditional.svg);
+                background-size: 39px 39px;
+            }            
+        }
+        &:nth-child(3) {
+            &::before {
+                background-image: url(../img/Icons/good.svg);
+                background-size: 45px 39px;
+            }            
+        }
     }
-    &__img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid rgba($green, .4);
-        border-radius: 100%;
-        width: 8.5rem;
-        height: 8.5rem;        
-    }
-    &__fruits {
-        width: 43px;
-        height: 41px;
-    }
-    &__traditional {
-        width: 39px;
-        height: 39px;
-    }   
-    &__good {
-        width: 45px;
-        height: 45px;
-    }   
 }
