@@ -890,5 +890,8 @@ body {
         text-decoration: none;
         color: rgba($green, .6);
         border-bottom: 1px solid #ecedec;
+        &:hover {
+            color: rgba($green, 1);
+        }
     }
 }
