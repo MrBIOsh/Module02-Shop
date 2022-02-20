@@ -817,6 +817,9 @@ body {
                 height: 2.7rem;
                 fill: $orange;
             }
+            &:hover {
+                color: $orange;
+            }
         }
         &__mail {
             display: flex;
@@ -832,6 +835,9 @@ body {
                 width: 2.9rem;
                 height: 2.4rem;
                 fill: $orange;
+            }
+            &:hover {
+                color: $orange;
             }
         }
     }
