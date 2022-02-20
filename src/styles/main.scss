@@ -263,9 +263,11 @@ body {
     text-decoration: none;
     border-radius: 3.8rem;
     display: inline-block;
+    border: none;
     &_min {
         font-size: 1.4rem;
         padding: 2.2rem 3.5rem;
+        box-shadow: 0px 1rem 1.1rem .17rem rgba(207, 92, 13, .15);
     }
 }
 
@@ -443,6 +445,10 @@ body {
         padding: 0%;
         background-position: center center;
         border-radius: 100%;
+        &_min {
+            width: 40px;
+            height: 40px;
+        }
     }
     &__minus {
         pointer-events: none;
@@ -462,6 +468,9 @@ body {
         width: 4.6rem;
         border: none;
         padding: 0;
+        &_min {
+            width: 33px;
+        }
     }
 }
 
@@ -691,5 +700,122 @@ body {
             background-repeat: no-repeat;
             opacity: .8;
         }
+    }
+}
+
+.delivery {
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+
+        &__pay {
+            display: flex;
+            justify-content: flex-start;
+        }
+        &__img {
+            width: 54px;
+            height: 33px;
+        }
+    }
+    
+}
+
+.contact {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    &-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__text {
+            margin: 0;
+            margin-top: 6rem;
+            margin-left: 12rem;
+            max-width: 400px;
+            flex-grow: 1;
+        }
+        &__form {
+            flex-basis: 58.9rem;
+        }
+        &__contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 6rem;
+        }
+        &__link {
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 2.4rem;
+            color: $green;
+            
+        }
+        &__tel {
+            &::before {
+                content: '';
+                display: block;
+                background-image: url(../img/Icons/phone.svg);
+            }
+        }
+        &__mail {
+            &::before {
+                content: '';
+                display: block;
+                background-image: url(../img/Icons/mail.svg);
+            }
+        }
+    }
+}
+
+.card {
+    border: 2px solid rgba($green, .4);
+    padding: 3.2rem 5.8rem 4rem;
+    border-radius: 2rem;
+    &__title {
+        font-family: $font-cormorant;
+        font-size: 3rem;
+        margin-top: 0;
+    }
+    &__label {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        display: block;
+        margin-left: .6rem;
+    }
+    &__input {
+        display: block;
+        border: 1px solid rgba($green, .4);
+        padding: 2.2rem 3rem;
+        margin-bottom: 2.8rem;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 2rem;
+        &:focus {
+            border: 1px solid rgba($green, 1);
+            outline: none;
+        }
+        &:invalid {
+            border: red;
+        }
+    }
+    &__check {
+        font-size: 1.2rem;
+        color: rgba($green, .6);
+        line-height: 1.5;
+        max-width: 360px;
+        margin-top: 1.6rem;
+        margin-bottom: 0;
+    }
+    &__link {
+        margin-top: 1.2rem;
+    }
+    &__docs {
+        text-decoration: none;
+        color: rgba($green, .6);
+        border-bottom: 1px solid #ecedec;
     }
 }
