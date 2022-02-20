@@ -704,25 +704,73 @@ body {
 }
 
 .delivery {
-    &-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 50px;
-
-        &__pay {
-            display: flex;
-            justify-content: flex-start;
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 12rem;
+        margin-top: 7.5rem;
+    }
+    &__text {        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2.7rem;
+        flex-basis: 56.7rem;
+    }
+    &__description {
+        line-height: 1.5;
+        margin: 0;
+    }
+    &__link {
+        color: $green;
+    }
+    &__pay {
+        flex-basis: 47.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__color {
+        color: $orange;
+    }
+    &__list {
+        list-style-type: none;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        gap: 3rem;
+    }
+    &__item {
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: .4;
+        cursor: pointer;
+        &:hover {
+            opacity: 1;
         }
-        &__img {
-            width: 54px;
-            height: 33px;
-        }
+    }
+    &__mastercard {
+        background-image: url(../img/Icons/mastercard.svg);
+        width: 5.3rem;
+        height: 3.2rem;
+    }
+    &__visa {
+        background-image: url(../img/Icons/visa.svg);
+        width: 7.6rem;
+        height: 2.3rem;
+    }
+    &__paypal {
+        background-image: url(../img/Icons/paypal.svg);
+        width: 8.7rem;
+        height: 2.4rem;
     }
     
 }
 
 .contact {
-    padding-top: 10rem;
+    padding-top: 20rem;
     padding-bottom: 10rem;
     &-box {
         display: flex;
@@ -755,17 +803,35 @@ body {
             
         }
         &__tel {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 3.1rem;
             &::before {
                 content: '';
                 display: block;
                 background-image: url(../img/Icons/phone.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 2.9rem;
+                height: 2.7rem;
+                fill: $orange;
             }
         }
         &__mail {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 3.1rem;
             &::before {
                 content: '';
                 display: block;
                 background-image: url(../img/Icons/mail.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 2.9rem;
+                height: 2.4rem;
+                fill: $orange;
             }
         }
     }
