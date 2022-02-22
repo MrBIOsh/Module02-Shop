@@ -723,6 +723,18 @@ body {
     }
     &__link {
         color: $green;
+        text-decoration: none;
+        position: relative;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-color: $green;
+            width: 55px;
+            height: 1px;
+            bottom: 3px;
+            left: 0;
+        }
     }
     &__pay {
         flex-basis: 47.4rem;
@@ -890,6 +902,106 @@ body {
         text-decoration: none;
         color: rgba($green, .6);
         border-bottom: 1px solid #ecedec;
+        &:hover {
+            color: rgba($green, 1);
+        }
+    }
+}
+
+.footer {
+    background-image: url(../img/Files/background-end.png);
+    footer {
+        border-top: 1px solid rgba($green, .2);
+        padding-top: 82px;
+        padding-bottom: 84px;
+    }
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 60px;
+        .logo {
+            width: 17.9rem;
+            height: 4.8rem;
+            flex-basis: 21.5%;
+        }
+    }
+    &__list {        
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    &__item {
+        font-size: 18px;
+    }
+    &__link {
+        text-decoration: none;
+        color: $green;
+        &:hover {
+            color: $orange;
+        }
+    }
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 35px;
+    }
+    &__tel {
+        font-size: 27px;
+    }
+    &__mail {
+        font-size: 18px;
+    }    
+    &-social {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        &__link {
+            display: block;
+            width: 5rem;
+            height: 5rem; 
+            border: 2px solid $green;
+            border-radius: 100%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            opacity: .8;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        &__vk {
+            background-image: url(../img/Icons/vk.svg);
+            background-size: 23px;
+        }
+        &__inst {
+            background-image: url(../img/Icons/instagram.svg);
+            background-size: 18px;
+        }
+        &__fb {
+            background-image: url(../img/Icons/facebook.svg);
+            background-size: 18px;
+        }
+    }
+    &__text {
+        display: flex;
+        justify-content: space-between;
+        color: rgba($green, .6);
+    }
+    &__copy {
+        margin: 0;
+    }
+    &__author {
+        margin: 0;
+    }
+    &__blok {
+        text-decoration: none;
+        color: rgba($green, .6);
         &:hover {
             color: rgba($green, 1);
         }
