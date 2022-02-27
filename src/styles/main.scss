@@ -2,6 +2,7 @@
 
 $green: #27300f;
 $orange: #d26a22;
+$dark-orange: #cf5c0d;
 
 $font-jost: 'Jost', sans-serif;
 $font-cormorant: 'Cormorant', serif;
@@ -14,6 +15,10 @@ body {
     font-size: 1.6rem;
     font-family: $font-jost;    
     color: $green;
+    background-image: url(../img/Files/background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .header {
@@ -35,6 +40,7 @@ body {
     &__link {
         color: $green;
         text-decoration: none;
+        transition: .3s;
         &:hover {
             color: $orange;
         }
@@ -43,6 +49,7 @@ body {
         font-weight: 500;
         color: $green;
         text-decoration: none;
+        transition: .3s;
         &:hover {
             color: $orange;
         }
@@ -59,6 +66,7 @@ body {
         background-size: 1.6rem 1.4rem;
         position: relative;
         border: 1px solid $orange;
+        transition: .3s;
         &:hover {
             background-color: $green;
             border: 1px solid $green;
@@ -89,11 +97,7 @@ body {
     padding-right: 15px;
 }
 
-.main {
-    background-image: url(../img/Files/background\ 1\ screen.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.main {    
     position: relative;
     padding-bottom: 187px;
     z-index: 0;
@@ -158,6 +162,7 @@ body {
             box-shadow: 0 0 0 4px #fff, 0 0 0 5px $green;
             background-color: $green;
             border-radius: 100%;
+            transition: .3s;
         }
         &_1 {
             top: 48px;
@@ -261,9 +266,13 @@ body {
     background-color: $orange;
     box-shadow: 0px 1rem 1.1rem .2rem rgba(207, 92, 13, 0.2);
     text-decoration: none;
-    border-radius: 3.8rem;
+    border-radius: 3.8rem;    
     display: inline-block;
     border: none;
+    transition: .3s;
+    &:hover {
+        background-color: $dark-orange;
+    }
     &_min {
         font-size: 1.4rem;
         padding: 2.2rem 3.5rem;
@@ -272,10 +281,6 @@ body {
 }
 
 .offer {
-    background-image: url(../img/Files/background\ 2\ sreen.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     padding-top: 2rem;
     padding-bottom: 200px;
     &__text {
@@ -299,16 +304,19 @@ body {
         background-size: cover;
         position: relative; 
         z-index: 0;
+        transition: .3s;
         &_white {            
             height: 520px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             padding: 4rem 3.7rem;
+            transition: .3s;
             &:hover {
                 .swiper-slide__hover {
                     height: 233px;
                     opacity: 1;
+                    transition: .3s;
                 }
                 &::after {
                     content: '';
@@ -352,6 +360,7 @@ body {
         &__hover {
             height: 0;
             opacity: 0;
+            transition: .3s;
         }
         &__text {
             margin: 0;
@@ -373,16 +382,15 @@ body {
         &__link {
             text-decoration: none;
             text-transform: uppercase;
-            color: rgba($green, .8);
+            color: $green;
+            opacity: .8;
             font-weight: 500;
             letter-spacing: 0.1rem;
             display: flex;
             justify-content: flex-start;
             align-items: center;
             gap: 2.1rem;
-            &:hover {
-                opacity: 1;
-            }
+            transition: .3s;
             &::before {
                 content: "";
                 display: block;
@@ -393,6 +401,9 @@ body {
                 background-repeat: no-repeat;
                 opacity: .8;
             }
+            &:hover {
+                opacity: 1;
+            }            
         }
         &__cover {
             position: relative;
@@ -420,6 +431,7 @@ body {
             }
         }
         &::after {
+            transition: .3s;
             color: rgba($green, .4);
             font-size: 1.8rem;
         }
@@ -570,6 +582,7 @@ body {
         text-decoration: none;
         color: $green;
         opacity: .5;
+        transition: .3s;
         &:hover {
             color: $orange;
             border: 1px solid $orange;
@@ -596,6 +609,7 @@ body {
             background-size: cover;
             position: relative; 
             z-index: 0;
+            transition: .3s;
             &:hover {
                 box-shadow: 0 0 0 2px rgba($green, .4) inset;
             }        
@@ -687,6 +701,7 @@ body {
         margin: 0 auto;
         padding: 0;
         cursor: pointer;
+        transition: .3s;
         &:hover {
             opacity: 1;
         }
@@ -759,8 +774,11 @@ body {
         background-size: cover;
         opacity: .4;
         cursor: pointer;
+        transition: .3s;
+        transform: scale(1);
         &:hover {
             opacity: 1;
+            transform: scale(1.05);
         }
     }
     &__mastercard {
@@ -811,8 +829,11 @@ body {
             text-decoration: none;
             font-weight: 700;
             font-size: 2.4rem;
-            color: $green;
-            
+            color: $green;   
+            transition: .3s;            
+            &:hover {
+                color: $orange;
+            }         
         }
         &__tel {
             display: flex;
@@ -829,9 +850,6 @@ body {
                 height: 2.7rem;
                 fill: $orange;
             }
-            &:hover {
-                color: $orange;
-            }
         }
         &__mail {
             display: flex;
@@ -847,9 +865,6 @@ body {
                 width: 2.9rem;
                 height: 2.4rem;
                 fill: $orange;
-            }
-            &:hover {
-                color: $orange;
             }
         }
     }
@@ -902,6 +917,7 @@ body {
         text-decoration: none;
         color: rgba($green, .6);
         border-bottom: 1px solid #ecedec;
+        transition: .3s;
         &:hover {
             color: rgba($green, 1);
         }
@@ -909,7 +925,6 @@ body {
 }
 
 .footer {
-    background-image: url(../img/Files/background-end.png);
     footer {
         border-top: 1px solid rgba($green, .2);
         padding-top: 82px;
@@ -940,6 +955,7 @@ body {
     &__link {
         text-decoration: none;
         color: $green;
+        transition: .3s;
         &:hover {
             color: $orange;
         }
@@ -971,6 +987,7 @@ body {
             background-repeat: no-repeat;
             background-position: center center;
             opacity: .8;
+            transition: .3s;
             &:hover {
                 opacity: 1;
             }
@@ -1002,6 +1019,7 @@ body {
     &__blok {
         text-decoration: none;
         color: rgba($green, .6);
+        transition: .3s;
         &:hover {
             color: rgba($green, 1);
         }
