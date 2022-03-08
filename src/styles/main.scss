@@ -7,6 +7,20 @@ $dark-orange: #cf5c0d;
 $font-jost: 'Jost', sans-serif;
 $font-cormorant: 'Cormorant', serif;
 
+$r_minmob: 320px;
+$r_mob_360: 360px;
+$r_mob_400: 400px;
+$r_mob_500: 500px;
+$r_mob_600: 600px;
+$r_tab: 768px;
+$r_tab_900: 900px;
+$r_desk: 1000px;
+$r_desk_1120: 1120px;
+$r_desk_hd: 1200px;
+$r_desk_1280: 1280px;
+$r_desk_1350: 1350px;
+$r_desk_full_1750: 1750px;
+
 @keyframes shadow {
     0% {
         box-shadow: 0px 0px 0px 0px rgba($green, .5);
@@ -29,6 +43,9 @@ body {
     font-size: 1.6rem;
     font-family: $font-jost;    
     color: $green;
+    background-image: url(../img/Files/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .header {
@@ -40,10 +57,22 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 4rem 15px 0;
-    gap: 8rem;
+    gap: 5%;
+    @media (max-width: $r_desk_1280) {
+        gap: 3%;
+    }
     &__navigation {
         flex-grow: 1;
-        margin-left: 4rem;
+        margin-left: 4.5rem;
+        @media (max-width: $r_desk_1280) {
+            margin-left: 0;
+        }
+        @media (max-width: $r_desk_hd) {
+            flex-grow: 0;
+        }
+        @media (max-width: $r_tab_900) {
+            display: none;
+        }
     }
     &__nav {       
         display: flex;
@@ -51,6 +80,9 @@ body {
         padding-left: 0;
         margin: 0;
         gap: 4.8rem;
+        @media (max-width: $r_desk_hd) {
+            gap: 2.8rem;
+        }
     }
     &__link {
         color: $green;
@@ -69,10 +101,13 @@ body {
         &:hover {
             color: $orange;
         }
+        @media (max-width: $r_desk_hd) {
+            display: none;
+        }
     }
     &__cart {
         display: block;
-        flex-basis: 3.8rem;
+        width: 3.8rem;
         height: 3.8rem;
         border-radius: 100%;
         background-color: $orange;
@@ -82,10 +117,21 @@ body {
         background-size: 1.6rem 1.4rem;
         position: relative;
         border: 1px solid $orange;
+        cursor: pointer;
+        @media (max-width: $r_desk_hd) {
+            background-image: url('../img/Icons/cart-green.svg');
+            background-color: #fff;
+            border: 1px solid $green;
+            opacity: .8;
+        }
         &:hover {
             background-color: $green;
             border: 1px solid $green;
-        }
+            @media (max-width: $r_desk_hd) {
+                background-color: #fff;
+                opacity: 1;
+            }
+        }        
     }
     &__counter {
         font-size: .8rem;
@@ -93,7 +139,50 @@ body {
         position: absolute;
         right: .8rem;
         top: .4rem;
-    }    
+        @media (max-width: $r_desk_hd) {
+            color: $green;
+        }
+    }
+    &__phone, &__menu {
+        display: none;
+    }
+    &__phone {
+        @media (max-width: $r_desk_hd) {
+            display: block;
+            width: 3.8rem;
+            height: 3.8rem;
+            border-radius: 100%;
+            background-color: #fff;
+            background-image: url(../img/Icons/phone.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 1.6rem 1.4rem;
+            position: relative;
+            border: 1px solid $green;
+        }
+    }
+    &__menu {
+        @media (max-width: $r_tab_900) {
+            display: block;
+            width: 3.8rem;
+            height: 3.8rem;
+            border-radius: 100%;
+            background-color: #fff;
+            background-image: url(../img/Icons/menu.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 1.6rem 1.4rem;
+            position: relative;
+            border: 1px solid $green;
+        }
+    }
+    &__buttons {
+        @media (max-width: $r_desk_hd) {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+    }
 }
 
 .logo {
@@ -110,13 +199,12 @@ body {
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
+    @media(max-width: $r_tab) {
+        max-width: 600px;
+    }
 }
 
-.main {
-    background-image: url(../img/Files/background\ 1\ screen.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.main {    
     position: relative;
     padding-bottom: 187px;
     z-index: 0;
@@ -124,15 +212,43 @@ body {
         max-width: 378px;
         margin-left: 12rem;
         margin-top: 6rem;
+        @media (max-width: $r_desk_1280) {
+            margin-left: 8rem;
+        }
+        @media (max-width: $r_desk_1120) {
+            margin-left: 4rem;
+        }
+        @media (max-width: $r_tab) {
+            max-width: 100%;
+            margin-left: 0;
+            margin-top: 3rem;
+        }
     }
     &__link {
         margin-top: 6rem;
+        @media (max-width: $r_tab) {
+            text-align: center;
+        }
     }
     &__flex {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 30px;
+        @media (max-width: $r_desk_1120) {
+        padding-top: 3rem;
+        padding-bottom: 9rem;
+        }
+    }
+    &__text {
+        padding-top: 4rem;
+        @media (max-width: $r_desk_1120) {
+            flex-basis: 395px;
+        }
+        @media (max-width: $r_tab) {
+            width: 100%;
+            padding-top: 0;
+        }
     }
     &__cover {
         flex-basis: 763px;
@@ -144,6 +260,22 @@ body {
         justify-content: center;
         align-items: center;
         position: relative;
+        @media (max-width: $r_desk_1350) {
+            flex-basis: 650px;
+            height: 650px;
+        }
+        @media (max-width: $r_desk_hd) {
+            flex-basis: 600px;
+            height: 600px;
+        }
+        @media (max-width: $r_desk_1120) {
+            border: 1px solid transparent;
+            height: auto;
+            flex-basis: calc(100% - 395px);
+        }
+        @media (max-width: $r_tab) {
+            display: none;
+        }
     }
     &__line {
         width: 658px;
@@ -154,12 +286,31 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @media (max-width: $r_desk_1350) {
+            flex-basis: 600px;
+            height: 600px;
+        }
+        @media (max-width: $r_desk_hd) {
+            border: 1px solid transparent;
+            width: auto;
+            height: auto;
+        }
     }
     &__img {
         width: 92%;
         box-shadow: 20px 20px 33px 0px rgba($green, .5);
         border-radius: 100%;
         animation: shadow 3s infinite;
+    }
+    &__img-mobi {
+        display: none;
+        @media (max-width: $r_tab) {
+            display: block;
+            max-width: 300px;
+            margin: 0 auto;
+            margin-top: 3rem;
+            animation: shadow 3s infinite;
+        }
     }
     &__btn {
         border: none;
@@ -186,6 +337,13 @@ body {
         &_1 {
             top: 48px;
             left: 65px;
+            @media (max-width: $r_desk_hd) {
+                top: 39px;
+                left: 24px;
+            }
+            @media (max-width: $r_desk_1120) {
+                display: none;
+            }
             &::before {
                 bottom: 10px;
                 left: 84px;
@@ -194,6 +352,15 @@ body {
         &_2 {
             top: 196px;
             right: 5px;
+            @media (max-width: $r_desk_1350) {
+                top: 106px;
+            }
+            @media (max-width: $r_desk_hd) {
+                top: 58px;
+            }            
+            @media (max-width: $r_desk_1120) {
+                display: none;
+            }
             &::before {
                 top: 17px;
                 right: 88px;
@@ -202,6 +369,12 @@ body {
         &_3 {
             bottom: -47px;
             right: 246px;
+            @media (max-width: $r_desk_1350) {
+                bottom: -59px;
+            }
+            @media (max-width: $r_desk_1120) {
+                display: none;
+            }
             &::before {
                 bottom: 55px;
                 right: 31px;
@@ -226,6 +399,11 @@ body {
         top: 55px;
         right: 25px;
         z-index: -1;
+        @media (max-width: $r_desk_full_1750) {
+            width: 9.8rem;
+            top: 120px;
+            right: -50px;
+        }
     }
     &__cucumber {
         width: 9rem;
@@ -240,6 +418,9 @@ body {
         bottom: 621px;
         left: 28px;
         z-index: -1;
+        @media (max-width: $r_desk_full_1750) {
+            display: none;
+        }
     }
     &__beans {
         width: 11.8rem;
@@ -256,6 +437,15 @@ body {
     font-size: 8rem;
     margin: 0;
     line-height: 1;
+    @media (max-width: $r_desk_1280) {
+        font-size: 7rem;
+    }
+    @media (max-width: $r_desk_1120) {
+        font-size: 6rem;
+    }
+    @media (max-width: $r_tab) {
+        text-align: center;
+    }
     &__span {
         font-style: italic;
     }
@@ -269,11 +459,20 @@ body {
 .description {
     margin: 0;
     line-height: 1.5;
+    @media (max-width: $r_tab) {
+        text-align: center;
+    }
     &_size-s {
         font-size: 1.8rem;
+        @media (max-width: $r_desk_1280) {
+        font-size: 1.6rem;
+        }
     }
     &_size-m {
         font-size: 2.4rem;
+        @media (max-width: $r_desk_1280) {
+            font-size: 2.2rem;
+        }
     }
 }
 
@@ -288,6 +487,9 @@ body {
     border-radius: 3.8rem;
     display: inline-block;
     border: none;
+    @media (max-width: $r_desk_1280) {
+        font-size: 1.4rem;
+    }
     &_min {
         font-size: 1.4rem;
         padding: 2.2rem 3.5rem;
@@ -506,6 +708,12 @@ body {
     &__text {
         flex-basis: 617px;
         margin-left: 12rem;
+        @media (max-width: $r_desk_1280) {
+            margin-left: 8rem;
+        }
+        @media (max-width: $r_desk_1120) {
+            margin-left: 4rem;
+        }
     }
     &__box {
         display: flex;
