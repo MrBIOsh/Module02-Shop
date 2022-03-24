@@ -35,6 +35,44 @@ $r_desk_full_1750: 1750px;
     }
 }
 
+@keyframes rotation {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes shift {
+    0% {
+        transform: translate(0, -2px);
+    }
+
+    50% {
+        transform: translate(0, 2px);
+    }
+
+    100% {
+        transform: translate(0, -2px);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 html {
     font-size: 10px;
 }
@@ -63,6 +101,9 @@ body {
     }
     @media (max-width: $r_desk_1280) {
         gap: 3%;
+    }
+    @media (max-width: $r_desk_hd) {
+        margin-bottom: 4rem;
     }
     &__navigation {
         flex-grow: 1;
@@ -156,7 +197,7 @@ body {
             height: 3.8rem;
             border-radius: 100%;
             background-color: #fff;
-            background-image: url(../img/Icons/phone.svg);
+            background-image: url(../img/Icons/tel.svg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: 1.6rem 1.4rem;
@@ -177,6 +218,7 @@ body {
             background-size: 1.6rem 1.4rem;
             position: relative;
             border: 1px solid $green;
+            cursor: pointer;
         }
     }
     &__buttons {
@@ -211,6 +253,10 @@ body {
     position: relative;
     padding-bottom: 187px;
     z-index: 0;
+    overflow: hidden;
+    @media (max-width: $r_desk_1120) {
+        padding-bottom: 120px;
+    }
     &__item {
         max-width: 378px;
         margin-left: 12rem;
@@ -395,6 +441,12 @@ body {
         bottom: 128px;
         right: 104px;
         z-index: -1;
+        @media (max-width: $r_desk_1350) {
+            bottom: 80px;
+        }
+        @media (max-width: $r_desk) {
+            width: 9rem;
+        }
     }
     &__avocado {
         width: 14.5rem;
@@ -414,6 +466,9 @@ body {
         top: -2px;
         left: 686px;
         z-index: -1;
+        @media (max-width: $r_desk_1350) {
+            left: 400px;
+        }
     }
     &__pepper {
         width: 9rem;
@@ -431,6 +486,10 @@ body {
         bottom: 170px;
         left: -6px;
         z-index: -1;
+        @media (max-width: $r_desk_1120) {
+            width: 10rem;
+            bottom: 90px;
+        }
     }
 }
 
@@ -476,6 +535,9 @@ body {
         @media (max-width: $r_desk_1280) {
             font-size: 2.2rem;
         }
+        @media (max-width: $r_desk_1120) {
+            font-size: 2rem;
+        }
     }
 }
 
@@ -509,9 +571,15 @@ body {
 .offer {
     padding-top: 2rem;
     padding-bottom: 200px;
+    @media (max-width: $r_desk_hd) {
+        padding-bottom: 120px;
+    }
     &__text {
         margin-top: 6rem;
         max-width: 700px;
+        @media (max-width: $r_desk_hd) {
+            margin-top: 4rem;
+        }
     }    
 }
 .slider {
@@ -770,6 +838,9 @@ body {
 
 .about {
     padding-bottom: 200px;
+    @media (max-width: $r_desk_hd) {
+        padding-bottom: 120px;
+    }
     &__text {
         flex-basis: 617px;
         margin-left: 12rem;
@@ -790,6 +861,9 @@ body {
         align-items: center;        
         margin-top: 8.1rem;
         gap: 5rem;
+        @media (max-width: $r_desk_1120) {
+            margin-top: 4rem;
+        }
         @media (max-width: $r_tab) {
             flex-direction: column;
         }
@@ -815,6 +889,7 @@ body {
         font-weight: 700;
         font-family: $font-cormorant;
         font-style: italic;
+        animation: size-text 3s infinite;
         &::before {
             content: '';
             display: flex;
@@ -825,40 +900,55 @@ body {
             width: 8.5rem;
             height: 8.5rem;            
             background-position: center center;            
-            background-repeat: no-repeat;
+            background-repeat: no-repeat;            
         }
         &:nth-child(1) {
             &::before {
                 background-image: url(../img/Icons/fruits.svg);
                 background-size: 43px 41px;
+                animation: rotation 3s linear infinite;
             }
         }
         &:nth-child(2) {
             &::before {
                 background-image: url(../img/Icons/traditional.svg);
                 background-size: 39px 39px;
+                animation: spin 3s linear infinite;
             }            
         }
         &:nth-child(3) {
             &::before {
                 background-image: url(../img/Icons/good.svg);
-                background-size: 45px 39px;
+                background-size: 45px 39px;                
+                animation: rotation 3s linear infinite;
             }            
         }
     }
 }
 
 .trends {
-    padding-bottom: 20rem;
+    padding-bottom: 200px;
+    @media (max-width: $r_desk_hd) {
+        padding-bottom: 120px;
+    }
     &__text {
         margin-top: 6rem;
+        @media (max-width: $r_desk_hd) {
+            margin-top: 4rem;
+        }
     }
 }
 
 .catalog {
-    padding-bottom: 15.4rem;
+    padding-bottom: 154px;
+    @media (max-width: $r_desk_1120) {
+        padding-bottom: 120px;
+    }
     &__text {
         margin-top: 6rem;
+        @media (max-width: $r_desk_hd) {
+            margin-top: 4rem;
+        }
     }
     &__filters {
         display: flex;
@@ -872,6 +962,9 @@ body {
         @media (max-width: $r_desk_1350) {
             flex-wrap: wrap;
         }
+        @media (max-width: $r_desk_hd) {
+            margin-top: 6rem;
+        }
     }
     &__link {
         display: flex;
@@ -884,7 +977,11 @@ body {
         text-decoration: none;
         color: $green;
         opacity: .5;
-        transition: .3s;        
+        transition: .3s;   
+        @media(max-width: $r_desk_1280) {
+            width: 20rem;
+            height: 5rem;
+        }
         &:hover {
             color: $orange;
             border: 1px solid $orange;
@@ -986,6 +1083,7 @@ body {
         .counter {
             &__input {
                 width: 3.3rem;
+                background-color: transparent;
             }
             &__btn {
                 width: 40px;
@@ -1033,9 +1131,18 @@ body {
         margin: 0 12rem;
         margin-top: 7.5rem;
         gap: 4rem;
+        @media (max-width: $r_desk_1280) {
+            margin-left: 8rem;
+            margin-right: 0;
+        }
+        @media (max-width: $r_desk_1120) {
+            margin-top: 4rem;
+            margin-left: 4rem;
+        }
         @media (max-width: $r_tab) {
             flex-direction: column;
         }
+
     }
     &__text {        
         display: flex;
@@ -1064,6 +1171,9 @@ body {
             height: 1px;
             bottom: 3px;
             left: 0;
+            @media (max-width: $r_desk_1280) {
+                width: 50px;
+            }
         }
     }
     &__pay {
@@ -1119,12 +1229,17 @@ body {
 }
 
 .contact {
-    padding-top: 20rem;
-    padding-bottom: 10rem;
+    padding-top: 200px;
+    padding-bottom: 100px;
+    @media (max-width: $r_desk_1120) {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
     &-box {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 4rem;
         @media (max-width: $r_tab) {
             flex-direction: column;
         }
@@ -1134,6 +1249,12 @@ body {
             margin-left: 12rem;
             max-width: 400px;
             flex-grow: 1;
+            @media (max-width: $r_desk_1280) {
+                margin-left: 4rem;
+            }
+            @media (max-width: $r_desk_1120) {
+                margin-top: 4rem;
+            }
         }
         &__form {
             flex-basis: 58.9rem;
@@ -1171,6 +1292,7 @@ body {
                 width: 2.9rem;
                 height: 2.7rem;
                 fill: $orange;
+                animation: rotation 3s infinite;
             }
         }
         &__mail {
@@ -1187,6 +1309,7 @@ body {
                 width: 2.9rem;
                 height: 2.4rem;
                 fill: $orange;
+                animation: shift 3s infinite;
             }
         }
     }
@@ -1196,6 +1319,9 @@ body {
     border: 2px solid rgba($green, .4);
     padding: 3.2rem 5.8rem 4rem;
     border-radius: 2rem;
+    @media(max-width: $r_tab_900) {
+        padding: 2.2rem 4.8rem 3rem;
+    }
     &__title {
         font-family: $font-cormorant;
         font-size: 3rem;
@@ -1257,10 +1383,14 @@ body {
         justify-content: space-between;
         align-items: flex-start;
         margin-bottom: 60px;
+        gap: 2rem;
         .logo {
             width: 17.9rem;
             height: 4.8rem;
             flex-basis: 21.5%;
+            @media (max-width: $r_tab_900) {
+                display: none;
+            }
         }
     }
     &__list {        
