@@ -1035,6 +1035,9 @@ body {
         @media (max-width: $r_tab) {
             flex-direction: column;
         }
+        @media (max-width: $r_mob_500) {
+            gap: 3rem;
+        }
     }
     &__list {
         display: flex;
