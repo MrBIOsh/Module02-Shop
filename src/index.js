@@ -7,9 +7,9 @@ import './styles/main.scss';
 import Swiper, { Navigation, Pagination } from 'swiper';
 
 var swiper = new Swiper(".offerSwiper", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
-    slidesPerGroup: 3,
+    slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: true,
     pagination: {
@@ -38,9 +38,9 @@ var swiper = new Swiper(".offerSwiper", {
   });
 
   var swiper = new Swiper(".trendsSwiper", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
-    slidesPerGroup: 3,
+    slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: true,
     pagination: {
