@@ -760,7 +760,10 @@ body {
         transition: .3s;
         @media (max-width: $r_desk_1280) {
             padding: 2rem 1.7rem 1.8rem;
-        }        
+        }      
+        @media (max-width: $r_tab) {
+            padding: 2rem 1.6rem 1.8rem;
+        }  
         &_white {            
             height: 52rem;
             display: flex;
@@ -1208,15 +1211,25 @@ body {
             margin-top: 2rem;
         }
     }
+    .container-filters {
+        max-width: 1440px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 0 auto;
+        @media (max-width: $r_tab) {
+            max-width: 768px;
+            padding: 0;
+        }
+    }
     &__filters {
         display: flex;
         justify-content: flex-start;
-        align-items: center;        
-        padding: 0 15px;
+        align-items: center;
         margin: 0;
         margin-top: 9.1rem;
         list-style-type: none;
-        gap: 2rem;        
+        gap: 2rem;
+        padding: 0;     
         @media (max-width: $r_desk_1350) {
             flex-wrap: wrap;
         }
@@ -1226,7 +1239,8 @@ body {
         @media (max-width: $r_tab) {
             flex-wrap: nowrap;
             overflow-x: scroll;
-            margin-top: 4rem;
+            margin-top: 4rem;        
+            padding: 0 15px;
         }
         @media (max-width: $r_mob_400) {
             gap: 1.25rem;
@@ -1237,6 +1251,7 @@ body {
         }
     }
     &__list {
+        padding: 0;
         @media (max-width: $r_mob_400) {
             font-size: 1.25rem;
         }        
